@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark  navbar-expand-lg bg-dark fixed-top">
+  <a class="navbar-brand text-white font-italic font-weight-bold" style="font-size: 20pt;" href="#"
+    [routerLink]="['/client-area']">
+    <img src="../../assets/logo.png" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+    Recipe Book
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+    aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{ show: isExpanded }" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-white a-hoover" style="font-size: 14pt;" [routerLink]="['/client-area']">Home <span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-white" style="font-size: 14pt;" [routerLink]="['/addRecipe']">Add Recipe <span
+            class="sr-only">(current)</span></a>
+      </li>
+  
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="search();">
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="pattern" name="pattern" placeholder="Search" id="search" aria-label="Search">
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="signOut();">
+     <button  type="submit" class="btn text-warning" style="font-size: 20pt;"><i class="fas fa-sign-out-alt"></i></button>
+    </form>
+  </div>
+</nav>

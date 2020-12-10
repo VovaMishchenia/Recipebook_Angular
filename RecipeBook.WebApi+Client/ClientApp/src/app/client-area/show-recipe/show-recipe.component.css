@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+p{
+    font-size: 16pt;
+    font-family: 'Ubuntu', sans-serif;
+}
+i{
+    color: darkgoldenrod;
+   
+    
+}
+.tab{
+    color:white;
+    background-color: #292b2c;
+}

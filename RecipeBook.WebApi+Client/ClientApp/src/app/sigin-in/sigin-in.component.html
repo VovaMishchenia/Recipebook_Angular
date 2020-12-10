@@ -1,0 +1,15 @@
+<div class="login-wrapper">
+  <div class="login-page">
+    <div class="form">
+      <h2>Sign In</h2>
+      <form class="login-form" #myForm="ngForm" (ngSubmit)="login();">
+        <input type="email" [(ngModel)]="model.Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="Email" />
+        <input type="password" [(ngModel)]="model.Password" placeholder="Password" name="Password" />
+        <button type="submit" class="btn btn-primary my-btn">Sign in</button>
+        <p class="message">Don't have an account <a [routerLink]="['/sign-up']">Sign Up</a></p>
+      </form>
+    </div>
+  
+  </div>
+</div>
+  

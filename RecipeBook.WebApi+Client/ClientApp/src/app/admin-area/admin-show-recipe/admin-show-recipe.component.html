@@ -1,0 +1,50 @@
+<admin-nav-menu></admin-nav-menu>
+<div class="container " style="margin-top: 80px;">
+  <h1 class="w-100 bg-white text-dark p-2 shadow-lg rounded-lg pl-4">{{recipe.name}}</h1>
+  <div class="row w-100 align-content-center align-items-center justify-content-around  ">
+    <img [src]="recipe.photoPath" class="rounded-lg shadow-lg mr-4 ml-3 mt-4 bg-white"
+      style="width: 45%; height: 320px;" alt="No image">
+    <div class class="d-flex flex-column mt-4  p-2 bg-white rounded-lg pl-4" style="width: 44%;">
+      <star-rating class=" border-bottom border-muted pb-2" [value]="recipe.rating" totalstars="5"
+        checkedcolor="#ffc107" uncheckedcolor="gray" size="28px" readonly="true"></star-rating>
+      <p class="border-bottom border-muted pb-2 pt-2">
+        <i class="fas fa-utensils   border p-2 rounded-circle bg-dark text-white"></i><span class="font-weight-bold">
+          Recipe type: </span>{{recipe.type}}
+      </p>
+      <p class="border-bottom border-muted pb-2">
+        <i class="fas fa-hard-hat  border p-2 rounded-circle bg-dark text-white"></i>
+        <span class="font-weight-bold"> Cuisine: </span>{{recipe.cuisine}}
+      </p>
+      <p class="border-bottom border-muted pb-2">
+        <i class="far fa-clock  border p-2 rounded-circle bg-dark text-white"></i>
+        <span class="font-weight-bold"> Cooking time: </span>{{recipe.cookingTime}}m
+      </p>
+      <p class=" pb-2">
+        <i class="fas fa-pizza-slice  border p-2 rounded-circle bg-dark text-white"></i>
+        <span class="font-weight-bold"> Calories: </span>{{recipe.cookingTime}}
+      </p>
+    </div>
+  </div>
+
+  <div class="bg-white p-3 shadow-lg" style="margin-top: 30px;">
+
+    <ngb-tabset class="p-4">
+      <ngb-tab title="Ingredients" class="tab">
+        <ng-template ngbTabContent>
+          <div class="boder rounded-lg border-dark p-2">
+            <pre>{{recipe.ingredients}}</pre>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Instruction">
+        <ng-template ngbTabContent>
+          <div class="boder rounded-lg border-dark p-2">
+            <pre style="white-space: pre-wrap;">{{recipe.instruction}}</pre>
+          </div>
+        </ng-template>
+      </ngb-tab>
+
+    </ngb-tabset>
+
+  </div>
+</div>

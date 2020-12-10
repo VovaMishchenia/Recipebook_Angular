@@ -1,0 +1,18 @@
+
+
+i{
+    color:#ffc107;
+    font-size: 16pt;
+}
+.card-width{
+    width:23rem;
+}
+i:hover
+{
+    color: darkcyan;
+}
+.trHover:hover{
+    background-color: #212529;
+    color:white;
+    cursor: pointer;
+}

@@ -1,0 +1,92 @@
+<div class="card bg-light mt-4 card-width cursor" (dblclick)="show();"
+placement="top" ngbTooltip="double click to open it" >
+        <img [src]='recipe.photoPath' class="card-img-top" alt="...">
+        <div class="card-body d-flex justify-content-between">
+            <h4 class="card-title">{{recipe.name}}</h4>
+        </div>
+        
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="font-weight-bold">Type: </span> {{recipe.type}}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Cuisine: </span> {{recipe.cuisine}}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Calories: </span> {{recipe.calories}}</li>
+            <li class="list-group-item"><span class="font-weight-bold">Cooking Time: </span> {{recipe.cookingTime}}</li>
+        </ul>
+        <div class="card-body d-flex justify-content-between">
+            <star-rating class="" [value]="recipe.rating" totalstars="5" checkedcolor="#ffc107" uncheckedcolor="gray" size="24px" readonly="true" ></star-rating>
+            <div class="pt-2">
+
+                <a (click)="delete();"  class="card-link" ><i class="fas fa-trash"></i></a>
+                
+                <!-- modal-->
+                <a (click)="open(mymodal)" class="card-link"><i class="fas fa-edit"></i></a>
+
+                <ng-template #mymodal let-modal>
+                    
+                    <div class="modal-header" style="background-color: rgb(235, 235, 235);">
+                      <h4 class="modal-title" id="modal-basic-title">Edit Recipe</h4>
+                      <button type="button" class="close" id="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true" class="text-warning font-weight-bold">×</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body " style="background-color: rgb(235, 235, 235);">
+                        <form  (ngSubmit)="update();" method="post"  class="border border-warning rounded p-4" >
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Recipe name</label>
+                                <input type="text" [(ngModel)]="name" name="name" class="border-warning form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Ingredients</label>
+                                <textarea  [(ngModel)]="ingredients" name="ingredients" class="border-warning form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3"></textarea>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Instruction</label>
+                                <textarea  [(ngModel)]="instruction" name="instruction" class="border-warning form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3"></textarea>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Cuisine</label>
+                                <select class="form-control border-warning" [(ngModel)]="cuisine" name="cuisine" id="exampleFormControlSelect1">
+                                  <option *ngFor="let item of cuisines" [value]="item.name">{{item.name}}</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Recipe Type</label>
+                                <select class="form-control border-warning" [(ngModel)]="type" name="type" id="exampleFormControlSelect1">
+                                  <option *ngFor="let item of types" [value]="item.name">{{item.name}}</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Cooking Time</label>
+                                <input type="number" [(ngModel)]="cookingTime" min="1"  name="cookingTime" class="border-warning form-control" id="exampleInputEmail1">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Calories</label>
+                                <input type="number" [(ngModel)]="calories" min="1"  name="calories" class="border-warning form-control" id="exampleInputEmail1">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlSelect1">Rating</label>
+                                <select class="form-control border-warning" [(ngModel)]="rating" name="rating" id="exampleFormControlSelect1">
+                                  <option [value]=1>1</option>
+                                  <option [value]=2>2</option>
+                                  <option [value]=3>3</option>
+                                  <option [value]=4>4</option>
+                                  <option [value]=5>5</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Image Url</label>
+                                <input type="text" [(ngModel)]="photoPath" name="photoPath" class="border-warning form-control" id="exampleInputEmail1" >
+                              </div>
+                            <button type="submit" class="btn btn-warning text-white font-weight-bold">Edit</button>
+                          </form>
+
+                    </div>
+                    
+                          
+                
+                  </ng-template>
+
+            </div>
+        </div>
+    </div>
+

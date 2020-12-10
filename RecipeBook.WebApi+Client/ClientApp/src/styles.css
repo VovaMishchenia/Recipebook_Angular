@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+@import '~angular-notifier/styles';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script');
+
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+body{
+  background-color: rgb(235, 235, 235);
+}
+/* body{
+  
+  background-image: url(https://cdn.pixabay.com/photo/2017/01/26/02/06/platter-2009590_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.mainHeader{
+  font-family: 'Dancing Script';
+  font-size:70pt;
+  color: white;
+  padding-top: 10%;
+  font-weight: bold;
+  
+}
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}

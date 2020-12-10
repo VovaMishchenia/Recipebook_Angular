@@ -1,0 +1,21 @@
+img{
+    height: 80vh;
+}
+@media(max-width:480px)
+{
+    img{
+        height: 30vh;
+    }
+}
+@media(max-width:768px) and (min-width:481px)
+{
+    img{
+        height: 35vh;
+    }
+}
+@media(min-width:768px) and (max-width:1279px)
+{
+    img{
+        height: 45vh;
+    }
+}

@@ -1,0 +1,68 @@
+<table class="table table-striped" style="margin-top: 75px;">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Photo path</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of recipes" (dblclick)="show($event,item.id);" class="trHover">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.cuisine}}</td>
+      <td>{{item.photoPath}}</td>
+      <td><a (click)="delete($event,item.id);" class="card-link"><i class="fas fa-trash"></i></a></td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="row m-4">
+  <div class="mr-4" style="width: 45%;">
+    <h3>Cuisines</h3>
+    <table class="table table-striped  mr-4">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cuisines" class="trHover">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td><a (click)="deleteCuisine($event,item.id);" class="card-link"><i class="fas fa-trash"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+
+<div class="ml-4" style="width: 45%;">
+  <h3>Types</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of types" class="trHover">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td><a (click)="deleteType($event,item.id);" class="card-link"><i class="fas fa-trash"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+</div>
